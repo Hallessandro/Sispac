@@ -1,0 +1,35 @@
+.lista {
+	background-color: #eee;
+}
+.menu {
+	background-color:#ddd;
+}
+body {
+	background-color: #2E8B57;
+}
+.sispac {
+	background-color: black;
+}
+.logo {
+	position: relative;
+	left: 10%;
+	width: 80%;
+	height: 120px;
+}
+.campos {
+	position: relative;
+	right: 15%;
+	
+}
+.campos_login {
+	background-color: #eee;
+	position: absolute;
+	top: 20%;
+	left: 35%
+}
+
+#wrapper {
+margin: 8px auto;
+min-width: 800px;/* Aqui colocas a largura mínima que pretendes */
+max-width: 1024px;/* Aqui colocas a largura máxima que pretendes */
+}
