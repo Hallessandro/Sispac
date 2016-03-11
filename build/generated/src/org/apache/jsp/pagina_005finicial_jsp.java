@@ -15,6 +15,11 @@ public final class pagina_005finicial_jsp extends org.apache.jasper.runtime.Http
 
   private static java.util.List<String> _jspx_dependants;
 
+  static {
+    _jspx_dependants = new java.util.ArrayList<String>(1);
+    _jspx_dependants.add("/menu_lateral.jsp");
+  }
+
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
 
   public java.util.List<String> getDependants() {
@@ -78,21 +83,72 @@ public final class pagina_005finicial_jsp extends org.apache.jasper.runtime.Http
       out.write("        <script type=\"text/javascript\" src=\"js/bootstrap.js\"></script>\n");
       out.write("        <link rel=\"stylesheet\" href=\"css/bootstrap.css\">\n");
       out.write("        <link rel=\"stylesheet\" href=\"css/bootstrap-responsive.css\">\n");
+      out.write("        <link rel=\"stylesheet\" href=\"css/pagina_inicial.css\">\n");
       out.write("        <title>Pagina Inicial</title>\n");
-      out.write("        <style>\n");
-      out.write("            #div1 {background-color: red;}\n");
-      out.write("            #div2 {background-color: green;}\n");
-      out.write("        </style>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
       out.write("        <div class=\"container-fluid\">\n");
       out.write("            <div class=\"row-fluid\">\n");
-      out.write("                <div class=\"span3\" id=\"div1\">\n");
-      out.write("                    MENU VAI FICAR AQUI\n");
-      out.write("                </div>\n");
+      out.write("                ");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("    <!-- Bootstrap Core CSS -->\n");
+      out.write("    <link href=\"css/bootstrap.min.css\" rel=\"stylesheet\">\n");
+      out.write("\n");
+      out.write("    <!-- Custom CSS -->\n");
+      out.write("    <link href=\"css/menu.css\" rel=\"stylesheet\">\n");
+      out.write("\n");
+      out.write("    <div id=\"wrapper\">\n");
+      out.write("\n");
+      out.write("        <!-- Sidebar -->\n");
+      out.write("        <div id=\"sidebar-wrapper\">\n");
+      out.write("            <ul class=\"sidebar-nav\">\n");
+      out.write("                <li class=\"sidebar-brand\">\n");
+      out.write("                    <a href=\"#\">\n");
+      out.write("                        SISPAC\n");
+      out.write("                    </a>\n");
+      out.write("                </li>\n");
+      out.write("                <li>\n");
+      out.write("                    <a href=\"#\">\n");
+      out.write("                        Olá ");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${usuario.nome}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\n");
+      out.write("                    </a>\n");
+      out.write("                </li>\n");
+      out.write("                <br>\n");
+      out.write("                <li>\n");
+      out.write("                    <a href=\"reservar_sala.jsp\">Reservar sala</a>\n");
+      out.write("                </li>\n");
+      out.write("                <li>\n");
+      out.write("                    <a href=\"registrar_frequencia.jsp\">Registrar frequência</a>\n");
+      out.write("                </li>\n");
+      out.write("                <li>\n");
+      out.write("                    <a href=\"emprestimo_material.jsp\">Empréstimo de material</a>\n");
+      out.write("                </li>\n");
+      out.write("                <li>\n");
+      out.write("                    <a href=\"novo_usuario.jsp\">Cadastro de usuários</a>\n");
+      out.write("                </li>\n");
+      out.write("                <li>\n");
+      out.write("                    <a href=\"#\">Contato</a>\n");
+      out.write("                </li>\n");
+      out.write("                <li>\n");
+      out.write("                    <a href=\"index.jsp\">Sair</a>\n");
+      out.write("                </li>\n");
+      out.write("            </ul>\n");
+      out.write("        </div>\n");
+      out.write("        <!-- /#sidebar-wrapper -->\n");
+      out.write("\n");
+      out.write("    <!-- jQuery -->\n");
+      out.write("    <script src=\"js/jquery.js\"></script>\n");
+      out.write("\n");
+      out.write("    <!-- Bootstrap Core JavaScript -->\n");
+      out.write("    <script src=\"js/bootstrap.min.js\"></script>\n");
+      out.write("\n");
       out.write("        \n");
-      out.write("                <div class=\"span9\" id=\"div2\">\n");
-      out.write("                    <h3>Salas Reservadas do dia</h3>\n");
+      out.write("                <div class=\"span11\" id=\"div2\">\n");
+      out.write("                    <h3 id=\"titulo\">Salas Reservadas do dia</h3>\n");
       out.write("                    \n");
       out.write("                    <table class=\"table table-condensed table-hover\">\n");
       out.write("                        <tr>\n");
@@ -133,7 +189,6 @@ public final class pagina_005finicial_jsp extends org.apache.jasper.runtime.Http
       out.write("\n");
       out.write("                   </table>\n");
       out.write("                </div>\n");
-      out.write("        <!-- ACHO QUE SERIA INTERESSANTE NESSA PÁGINA, EXIBIR A LISTA DAS SALAS RESERVADAS NO DIA ATUAL -->\n");
       out.write("        <!-- PARA ISSO, USAR JSTL E EL, NADA DE CÓDIGO JAVA MISTURADO COM HTML --> \n");
       out.write("        <!-- AS CORES ATUALMENTE USADAS NO BACKGROUND, SÃO APENAS PARA VISUALIZAR O TAMANHO DAS DIV'S \n");
       out.write("        PARA SABER SE ESTÃO SEGUINDO O QUE DEVEM DO PADRÃO DO BOOTSTRAP\n");

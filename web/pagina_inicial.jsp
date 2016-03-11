@@ -27,7 +27,7 @@
             <div class="row-fluid">
                 <%@ include file="menu_lateral.jsp" %>
         
-                <div class="span9" id="div2">
+                <div class="span11" id="div2">
                     <h3 id="titulo">Salas Reservadas do dia</h3>
                     
                     <table class="table table-condensed table-hover">

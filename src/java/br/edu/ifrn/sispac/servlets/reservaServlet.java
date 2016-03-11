@@ -41,11 +41,7 @@ public class reservaServlet extends HttpServlet {
             throws ServletException, IOException {
         
         reservas r = new reservas();
-        r.setNum_sala(Integer.parseInt(request.getParameter("sala")));
-        r.setHorario(request.getParameter("horarios"));
-        r.setNome_reservou(request.getParameter("nome"));
-        r.setMatricula_reservou(request.getParameter("matricula"));
-        //SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        
         SimpleDateFormat formato = new SimpleDateFormat("yyyy/MM/dd");
         Date data = null;
         try {
@@ -54,6 +50,13 @@ public class reservaServlet extends HttpServlet {
             Logger.getLogger(reservaServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
         r.setData(data);
+        r.setHorario(request.getParameter("horario"));
+        r.setNome_reservou(request.getParameter("nome"));
+        r.setMatricula_reservou(request.getParameter("matricula"));
+        r.setNum_sala(Integer.parseInt(request.getParameter("num_sala")));
+        
+        //SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        
         try {
             new ReservaDAO().inserirReserva(r);
         } catch (SQLException ex) {

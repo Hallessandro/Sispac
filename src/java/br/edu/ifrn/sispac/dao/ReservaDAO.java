@@ -30,7 +30,7 @@ public class ReservaDAO extends GeralDAO{
             private final String QUERY_RESERVA = "select * from tb_salas_reservadas where data = ?"; 
 
             public void inserirReserva(reservas r) throws SQLException{
-                executarComando(INSERT, r.getNum_sala(),r.getData(), r.getHorario(), r.getNome_reservou(), r.getMatricula_reservou());
+                executarComando(INSERT, r.getData(), r.getHorario(), r.getNome_reservou(), r.getMatricula_reservou(), r.getNum_sala());
             }
 
 
