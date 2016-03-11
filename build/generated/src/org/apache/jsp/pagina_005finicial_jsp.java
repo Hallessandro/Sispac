@@ -3,6 +3,8 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import java.util.ArrayList;
+import br.edu.ifrn.sispac.modelo.reservas;
 import java.text.SimpleDateFormat;
 import java.sql.Date;
 
@@ -48,6 +50,8 @@ public final class pagina_005finicial_jsp extends org.apache.jasper.runtime.Http
       out.write("\n");
       out.write("\n");
       out.write("\n");
+      out.write("\n");
+      out.write("\n");
       br.edu.ifrn.sispac.modelo.reservas reservas = null;
       synchronized (session) {
         reservas = (br.edu.ifrn.sispac.modelo.reservas) _jspx_page_context.getAttribute("reservas", PageContext.SESSION_SCOPE);
@@ -88,20 +92,46 @@ public final class pagina_005finicial_jsp extends org.apache.jasper.runtime.Http
       out.write("                </div>\n");
       out.write("        \n");
       out.write("                <div class=\"span9\" id=\"div2\">\n");
-      out.write("                    <h3>Salas Reservadas</h3>\n");
+      out.write("                    <h3>Salas Reservadas do dia</h3>\n");
+      out.write("                    \n");
+      out.write("                    <table class=\"table table-condensed table-hover\">\n");
+      out.write("                        <tr>\n");
+      out.write("                            <th>Sala</th>\n");
+      out.write("                            <th>Horário</th>\n");
+      out.write("                            <th>Nome</th>\n");
+      out.write("                            <th>Matrícula</th>\n");
+      out.write("                        </tr>\n");
       out.write("                    \n");
       out.write("                    ");
  
-                    
                     Date data = new Date(System.currentTimeMillis());  
-                    SimpleDateFormat formatarDate = new SimpleDateFormat("dd/MM/yyyy"); 
+                    //SimpleDateFormat formatarDate = new SimpleDateFormat("dd/MM/yyyy");
+                    SimpleDateFormat formatarDate = new SimpleDateFormat("yyyy-MM-dd/");
                     //String dt = formatarDate.format(data);
+                    ArrayList<reservas> reservasX = null;
+                    reservasX = (ArrayList<reservas>) dao.getReservas(data);
                     
+                    for(reservas r: reservasX){ 
       out.write("\n");
       out.write("                    \n");
-      out.write("                    <h3>");
-      out.print( formatarDate.format(data) );
-      out.write("</h3>\n");
+      out.write("                    <tr>\n");
+      out.write("                        <td>");
+      out.print( r.getNum_sala() );
+      out.write("</td>\n");
+      out.write("                        <td>");
+      out.print( r.getHorario() );
+      out.write("</td>\n");
+      out.write("                        <td>");
+      out.print( r.getNome_reservou() );
+      out.write("</td>\n");
+      out.write("                        <td>");
+      out.print( r.getMatricula_reservou() );
+      out.write("</td>\n");
+      out.write("                    </tr>\n");
+      out.write("                    ");
+ } 
+      out.write("\n");
+      out.write("                   </table>\n");
       out.write("                </div>\n");
       out.write("        <!-- ACHO QUE SERIA INTERESSANTE NESSA PÁGINA, EXIBIR A LISTA DAS SALAS RESERVADAS NO DIA ATUAL -->\n");
       out.write("        <!-- PARA ISSO, USAR JSTL E EL, NADA DE CÓDIGO JAVA MISTURADO COM HTML --> \n");

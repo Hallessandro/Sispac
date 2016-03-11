@@ -19,33 +19,44 @@
         <script type="text/javascript" src="js/bootstrap.js"></script>
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/bootstrap-responsive.css">
+        <link rel="stylesheet" href="css/pagina_inicial.css">
         <title>Pagina Inicial</title>
-        <style>
-            #div1 {background-color: red;}
-            #div2 {background-color: green;}
-        </style>
     </head>
     <body>
         <div class="container-fluid">
             <div class="row-fluid">
-                <div class="span3" id="div1">
-                    MENU VAI FICAR AQUI
-                </div>
+                <%@ include file="menu_lateral.jsp" %>
         
                 <div class="span9" id="div2">
-                    <h3>Salas Reservadas</h3>
+                    <h3 id="titulo">Salas Reservadas do dia</h3>
+                    
+                    <table class="table table-condensed table-hover">
+                        <tr>
+                            <th>Sala</th>
+                            <th>Horário</th>
+                            <th>Nome</th>
+                            <th>Matrícula</th>
+                        </tr>
                     
                     <% 
                     Date data = new Date(System.currentTimeMillis());  
-                    SimpleDateFormat formatarDate = new SimpleDateFormat("dd/MM/yyyy"); 
+                    //SimpleDateFormat formatarDate = new SimpleDateFormat("dd/MM/yyyy");
+                    SimpleDateFormat formatarDate = new SimpleDateFormat("yyyy-MM-dd/");
                     //String dt = formatarDate.format(data);
-                    ArrayList<reservas> reservas = null;
-                    reservas = dao.getReservas(data);
-                    %>
+                    ArrayList<reservas> reservasX = null;
+                    reservasX = (ArrayList<reservas>) dao.getReservas(data);
                     
-                    <h3><%= formatarDate.format(data) %></h3>
+                    for(reservas r: reservasX){ %>
+                    
+                    <tr>
+                        <td><%= r.getNum_sala() %></td>
+                        <td><%= r.getHorario() %></td>
+                        <td><%= r.getNome_reservou() %></td>
+                        <td><%= r.getMatricula_reservou() %></td>
+                    </tr>
+                    <% } %>
+                   </table>
                 </div>
-        <!-- ACHO QUE SERIA INTERESSANTE NESSA PÁGINA, EXIBIR A LISTA DAS SALAS RESERVADAS NO DIA ATUAL -->
         <!-- PARA ISSO, USAR JSTL E EL, NADA DE CÓDIGO JAVA MISTURADO COM HTML --> 
         <!-- AS CORES ATUALMENTE USADAS NO BACKGROUND, SÃO APENAS PARA VISUALIZAR O TAMANHO DAS DIV'S 
         PARA SABER SE ESTÃO SEGUINDO O QUE DEVEM DO PADRÃO DO BOOTSTRAP

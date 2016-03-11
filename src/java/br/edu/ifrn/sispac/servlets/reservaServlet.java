@@ -45,7 +45,8 @@ public class reservaServlet extends HttpServlet {
         r.setHorario(request.getParameter("horarios"));
         r.setNome_reservou(request.getParameter("nome"));
         r.setMatricula_reservou(request.getParameter("matricula"));
-        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        //SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat formato = new SimpleDateFormat("yyyy/MM/dd");
         Date data = null;
         try {
             data = formato.parse(request.getParameter("data"));

@@ -24,7 +24,7 @@
                 </li>
                 <li>
                     <a href="#">
-                        NOME DO USUÁRIO ${usuario.nome}
+                        Olá ${usuario.nome}
                     </a>
                 </li>
                 <br>
@@ -44,7 +44,7 @@
                     <a href="#">Contato</a>
                 </li>
                 <li>
-                    <a href="#">Sair</a>
+                    <a href="index.jsp">Sair</a>
                 </li>
             </ul>
         </div>

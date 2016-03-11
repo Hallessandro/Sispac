@@ -17,17 +17,17 @@ import java.util.List;
  * @author Hallessandro
  */
 public class ReservaDAO extends GeralDAO{
-        private final String INSERT = "insert into tbl_salas_reservadas (data,horario,"
+        private final String INSERT = "insert into tb_salas_reservadas (data,horario,"
                                           + "nome_reservou, matricula_reservou, num_sala) values (?,?,?,?,?);";
         
-            private final String QUERY_RESERVA_BY_HORARIO = "select * from tbl_salas_reservadas "
+            private final String QUERY_RESERVA_BY_HORARIO = "select * from tb_salas_reservadas "
                                                             + "where num_sala = ? "
                                                             + "and data = ? "
                                                             //+ "and nome_reservou = ? "
                                                             //+ "and matricula_reservou = ? "
                                                             + "and horario = ?;"; 
             
-            private final String QUERY_RESERVA = "select * from tbl_salas_reservadas where data = ?"; 
+            private final String QUERY_RESERVA = "select * from tb_salas_reservadas where data = ?"; 
 
             public void inserirReserva(reservas r) throws SQLException{
                 executarComando(INSERT, r.getNum_sala(),r.getData(), r.getHorario(), r.getNome_reservou(), r.getMatricula_reservou());
