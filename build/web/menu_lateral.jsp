@@ -32,7 +32,7 @@
                     <a href="reservar_sala.jsp">Reservar sala</a>
                 </li>
                 <li>
-                    <a href="registrar_frequencia.jsp">Registrar frequência</a>
+                    <a href="frequencia.jsp">Registrar frequência</a>
                 </li>
                 <li>
                     <a href="emprestimo_material.jsp">Empréstimo de material</a>
