@@ -17,14 +17,14 @@
         <title>Registrar Frequência</title>
     </head>
     <body>
-        <div class="container-fluid">
+        <div class="container-fluid" id="pagina">
             <div class="row-fluid">
                 <%@ include file="menu_lateral.jsp" %>
                 
-                <div class="span11">
+                <div class="span11" id="conteudo">
                     <form method="post" action="frequenciaServlet">
                         <legend>Registrar Frequência</legend>
-                        <p><label for="nome_professor">Nome do Professor</label><input type="text" name="nome_professor"></p>
+                        <p><label for="nome_professor">Nome do Professor</label><input type="text" name="nome_professor" class="input-lg"></p>
                         <p><label for="matricula_professor">Matrícula do Professor</label><input type="number" name="matricula-professor"></p>
                         <p><label for="data">Data</label><input type="date" name="data"></p>
                         <p><label for="num_sala">Sala</label><select name="num_sala">
