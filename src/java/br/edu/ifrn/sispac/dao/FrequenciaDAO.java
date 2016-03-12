@@ -21,8 +21,6 @@ public class FrequenciaDAO extends GeralDAO {
     private final String INSERT = "insert into frequencia (data,"
                                           + "horario, num_sala, nome_professor, matricula_professor) values (?,?,?,?,?);";
     
-    //Atualmente essa busca vai ser meio confusa, mas depois de ter a data devidamente formatada
-    //ela fara mais sentindo, pois like poderá ser algo como %/?/% 
     
             private final String QUERY_FREQUENCIA = "select * from frequencia "
                                                     + "where matricula_professor = ? "                                

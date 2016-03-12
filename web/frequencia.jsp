@@ -33,6 +33,12 @@
                             <option value="A103">A103</option>
                             <option value="A104">A104</option>
                             <option value="A105">A105</option>
+                            <option value="A106">A106</option>
+                            <option value="A107">A107</option>
+                            <option value="A108">A108</option>
+                            <option value="A109">A109</option>
+                            <option value="A110">A110</option>
+                            <option value="A111">A111</option>
                         </select></p>
                         <p><label for="horario">Horário</label><select name="horario">
                             <option value="1M">1M</option>
